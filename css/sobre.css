@@ -4,7 +4,7 @@
 
 /* Título principal da página */
 .main-content {
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 .main-title {
@@ -146,7 +146,11 @@ section {
     margin-right: 8px;
 }
 
-/* Responsividade */
+/* ==================================== */
+/* Responsividade Aprimorada */
+/* ==================================== */
+
+/* Ajustes para telas menores que 992px */
 @media (max-width: 992px) {
     .profile-content,
     .bio-video-content {
@@ -158,9 +162,42 @@ section {
     }
     .video-container {
         max-width: 100%;
+        margin-top: 20px;
     }
     .profile-img {
         width: 180px;
         height: 180px;
+    }
+}
+
+/* Ajustes para telas menores que 768px (smartphones) */
+@media (max-width: 768px) {
+    .main-content {
+        padding-top: 40px;
+    }
+    .main-title {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    section {
+        padding: 40px 0;
+    }
+    .profile-section {
+        padding: 30px;
+    }
+    .profile-content {
+        gap: 20px;
+    }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    .instagram-bio-card {
+        padding: 20px;
     }
 }
