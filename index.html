@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anderson Silva - Corretor de Imóveis</title>
+    <meta name="description" content="Anderson Silva: 15 anos de experiência no mercado imobiliário de São Luís. Consultoria completa e segura para encontrar a propriedade ideal.">
+    <meta name="keywords" content="corretor de imóveis, imoveis, apartamento, casa, aluguel, venda, São Luís, Anderson Silva">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Anderson Silva</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="imoveis.html">Imóveis</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-banner">
+            <div class="container">
+                <h1>Seu Corretor</h1>
+                <p>Conectando pessoas aos seus lares dos sonhos.</p>
+                <a href="#" class="btn-whatsapp" id="open-contact-modal">
+                    <i class=""></i> Faça sua Simulação!!
+                </a>
+            </div>
+        </section>
+        
+        <section class="about-intro">
+            <div class="container">
+                <h2>Olá, eu sou Anderson Silva</h2>
+                <p>
+                    Com 15 anos de experiência no dinâmico mercado imobiliário de São Luís, meu compromisso é ir além da simples transação. Meu foco é proporcionar uma consultoria completa e segura, entendendo as necessidades e sonhos de cada cliente para encontrar a propriedade ideal, seja para morar ou investir. Acredito que o verdadeiro sucesso está na satisfação de quem confia em meu trabalho para realizar um dos mais importantes passos da vida.
+                </p>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <h2>Meus Diferenciais</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <i class="fa-solid fa-handshake"></i>
+                        <h3>Atendimento Personalizado</h3>
+                        <p>Foco total nas suas necessidades e expectativas para encontrar o imóvel perfeito.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fa-solid fa-shield-alt"></i>
+                        <h3>Segurança e Transparência</h3>
+                        <p>Todo o processo de negociação é conduzido com clareza e profissionalismo.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <h3>Conhecimento Local</h3>
+                        <p>Especialista na região de São Luís, oferecendo as melhores opções de mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lancamentos-section">
+            <div class="container">
+                <h2>Conheça nossos empreendimentos</h2>
+                <p>Visite nossa página de imóveis para ver todas as opções disponíveis de diversos empreendimentos em destaque.</p>
+                <a href="imoveis.html" class="btn-lancamento">Ver Imóveis Disponíveis</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-contact-modal">&times;</span>
+            <h2>Quer fazer uma simulação?</h2>
+            <p>Preencha os campos abaixo para que eu possa te ajudar.</p>
+            <form id="contact-form" class="modal-form">
+                <div class="form-group">
+                    <label for="empreendimento">Empreendimento de Interesse:</label>
+                    <input type="text" id="empreendimento" name="empreendimento" placeholder="Ex: Grand Park, Alphaville, etc.">
+                </div>
+                <div class="form-group">
+                    <label for="nascimento">Data de Nascimento:</label>
+                    <input type="text" id="nascimento" name="nascimento" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo-renda">Tipo de Renda:</label>
+                    <select id="tipo-renda" name="tipo-renda">
+                        <option value="">Selecione o tipo de renda</option>
+                        <option value="Formal (CLT)">Formal (CLT)</option>
+                        <option value="Autônomo/Profissional Liberal">Autônomo/Profissional Liberal</option>
+                        <option value="Aposentado/Pensionista">Aposentado/Pensionista</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="valor-renda">Valor Bruto da Renda (R$):</label>
+                    <input type="number" id="valor-renda" name="valor-renda" placeholder="Ex: 5000" required>
+                </div>
+                <div class="form-group">
+                    <label for="contato">Contato (Telefone):</label>
+                    <input type="text" id="contato" name="contato" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <button type="submit" class="btn btn-whatsapp-form">Enviar Simulação</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anderson Silva. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="#" class="whatsapp-float" id="whatsapp-float-link">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

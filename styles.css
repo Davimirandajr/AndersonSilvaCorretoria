@@ -1,0 +1,470 @@
+/* ==================================== */
+/* 1. Variáveis de Cores e Estilos Globais */
+/* ==================================== */
+
+:root {
+    --cor-primaria: #f8f9fa; /* Fundo principal: Cinza muito claro, quase branco */
+    --cor-secundaria: #eef2f6; /* Fundo de seções e cards: Cinza claro suave */
+    --cor-texto: #212529; /* Texto principal: Azul escuro para contraste */
+    --cor-texto-secundario: #6c757d; /* Texto secundário: Cinza neutro */
+    --cor-destaque: #0062cc; /* Azul vibrante, mas mais suave */
+    --cor-sucesso: #28a745; /* Verde para sucesso */
+    --cor-branco: #ffffff;
+    --borda-radius: 6px;
+    --sombra-leve: rgba(0,0,0,0.08);
+    --sombra-media: rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--cor-texto);
+    background-color: var(--cor-primaria);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 700;
+    color: var(--cor-texto);
+}
+
+p {
+    color: var(--cor-texto-secundario);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-destaque);
+}
+
+/* ==================================== */
+/* 2. Layouts e Estrutura do Site */
+/* ==================================== */
+
+.navbar {
+    background: var(--cor-branco);
+    box-shadow: 0 2px 10px var(--sombra-leve);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cor-destaque);
+    text-shadow: 0 0 5px rgba(0, 98, 204, 0.4);
+    transition: all 0.3s ease;
+}
+
+.navbar .logo:hover {
+    color: var(--cor-destaque);
+    text-shadow: 0 0 10px rgba(0, 98, 204, 0.6);
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav ul li a {
+    font-weight: 500;
+    color: var(--cor-texto);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navbar nav ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-destaque);
+    transition: width 0.3s ease;
+}
+
+.navbar nav ul li a:hover:after {
+    width: 100%;
+}
+
+.main-content {
+    padding-top: 80px;
+}
+
+footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-secundario);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    box-shadow: 0 -2px 10px var(--sombra-leve);
+}
+
+/* ==================================== */
+/* 3. Seções da Página Inicial */
+/* ==================================== */
+
+.hero-banner {
+    background-image: linear-gradient(rgba(248, 249, 250, 0.8), rgba(238, 242, 246, 0.8)), url('banner-imovel.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 150px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 -5px 15px var(--sombra-leve);
+}
+
+.hero-banner h1 {
+    font-size: 56px;
+    margin-bottom: 10px;
+    color: var(--cor-destaque);
+    text-shadow: 0 0 5px rgba(0, 98, 204, 0.4);
+}
+
+.hero-banner p {
+    font-size: 20px;
+    margin: 10px 0 30px;
+    color: var(--cor-texto-secundario);
+    font-weight: 400;
+}
+
+.about-intro,
+.highlights-section,
+.lancamentos-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-intro {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-secundario);
+}
+
+.about-intro h2,
+.lancamentos-section h2 {
+    font-size: 36px;
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-intro h2:after,
+.highlights-section h2:after,
+.lancamentos-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--cor-destaque);
+    border-radius: 2px;
+}
+
+.highlights-section {
+    background-color: var(--cor-secundaria);
+}
+
+.highlights-section h2 {
+    color: var(--cor-texto);
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.highlight-card {
+    background-color: var(--cor-branco);
+    border-radius: var(--borda-radius);
+    box-shadow: 0 4px 15px var(--sombra-leve);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px var(--sombra-media);
+}
+
+.highlight-card i {
+    font-size: 45px;
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.highlight-card h3 {
+    font-size: 22px;
+    color: var(--cor-texto);
+    margin-bottom: 10px;
+}
+
+.highlight-card p {
+    font-size: 15px;
+    color: var(--cor-texto-secundario);
+}
+
+.lancamentos-section {
+    background-color: var(--cor-primaria);
+}
+
+/* ==================================== */
+/* 4. Componentes Comuns e Modal */
+/* ==================================== */
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px var(--sombra-leve);
+}
+
+.btn-whatsapp {
+    background: var(--cor-sucesso);
+    color: var(--cor-branco);
+}
+
+.btn-whatsapp:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+}
+
+.btn-whatsapp i {
+    margin-right: 8px;
+}
+
+.btn-lancamento {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+}
+
+.btn-lancamento:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background: var(--cor-sucesso);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px var(--sombra-leve);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float i {
+    color: var(--cor-branco);
+    font-size: 30px;
+}
+
+/* --- Modal (Pop-up) de Contato --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--cor-branco);
+    margin: 8% auto;
+    padding: 30px;
+    border-radius: var(--borda-radius);
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 10px 30px var(--sombra-leve);
+    animation: slideIn 0.4s ease-out;
+}
+
+.close-btn {
+    color: var(--cor-texto-secundario);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--cor-destaque);
+}
+
+.modal-content h2 {
+    color: var(--cor-texto);
+    margin-top: 0;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 15px;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 25px;
+}
+
+.modal-form .form-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.modal-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--cor-texto);
+}
+
+.modal-form input,
+.modal-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: var(--borda-radius);
+    background-color: var(--cor-branco);
+    color: var(--cor-texto);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-form input:focus,
+.modal-form select:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 5px rgba(0, 98, 204, 0.2);
+}
+
+.btn-whatsapp-form {
+    background: var(--cor-sucesso);
+    color: var(--cor-branco);
+    font-size: 16px;
+    padding: 14px 25px;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: var(--borda-radius);
+    text-transform: none;
+    box-shadow: 0 2px 8px var(--sombra-leve);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-whatsapp-form:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Animações */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================================== */
+/* 5. Responsividade */
+/* ==================================== */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+    .navbar nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .hero-banner {
+        padding: 100px 0;
+    }
+    .hero-banner h1 {
+        font-size: 40px;
+    }
+    .hero-banner p {
+        font-size: 18px;
+    }
+    .about-intro h2,
+    .highlights-section h2,
+    .lancamentos-section h2 {
+        font-size: 30px;
+    }
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 20px;
+    }
+    .btn {
+        padding: 10px 20px;
+    }
+}

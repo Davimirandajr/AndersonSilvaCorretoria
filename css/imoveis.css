@@ -1,0 +1,81 @@
+/* ==================================== */
+/* Estilo Específico para a Página de Empreendimentos */
+/* ==================================== */
+
+/* Título principal da página */
+.main-content h1 {
+    text-align: center;
+    font-size: 48px;
+    color: var(--cor-destaque);
+    text-shadow: 0 0 8px rgba(0, 98, 204, 0.4);
+    margin-bottom: 40px;
+    padding-top: 40px;
+}
+
+/* Layout em grid para os cards */
+.empreendimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Estilo do card de cada empreendimento */
+.empreendimento-card {
+    background-color: var(--cor-branco);
+    border-radius: var(--borda-radius);
+    box-shadow: 0 4px 20px var(--sombra-leve);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 30px;
+    border: 1px solid var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efeito de hover no card */
+.empreendimento-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px var(--sombra-media);
+}
+
+.empreendimento-card i {
+    font-size: 60px;
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.empreendimento-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--cor-texto);
+}
+
+.empreendimento-card a {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.empreendimento-card a:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .empreendimentos-grid {
+        grid-template-columns: 1fr;
+    }
+}
